@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>canvas CAD</title>
+</head>
+<body oncontextmenu="return false;">
+<div class="App">
+    <div>
+        <div class="used-technology">
+            <div class="technology">
+                <span>Pattern Singleton</span>
+                <p>Использовался для всего класса Canvas, во избежании создания второго поля для рисования</p>
+            </div>
+            <div class="technology">
+                <span>Pattern Observer</span>
+                <p>Использовался в виде слушателя за кнопками с типами фигур ( линия, круг, треугольник)</p>
+            </div>
+            <div class="technology">
+                <span>Pattern Adapter</span>
+                <p>Использовался для адаптации данных между приложением и API</p>
+            </div>
+            <div class="technology">
+                <span>Pattern Builder</span>
+                <p>Использовался для создания фигуры треугольник, при помощи класса Line(можно реализовать еще лучше)</p>
+            </div>
+            <div class="technology">
+                <span>Pattern Decorator</span>
+                <p>Использовался для создания PopUp подсказки о создании фигуры( добавлял в прототип как миксин )</p>
+            </div>
+            <div class="technology">
+                <span>Архитектура проекта</span>
+                <p>При масштабируемости приложения столкнулся с проблемами, которые решил при помощи паттернов и схемы
+                    архитектуры
+                    <a href="https://drive.google.com/file/d/1AgJkdoJa1vFLTwCXaAUkCH6iW-7kW98w/view?usp=sharing">Ссылка</a>
+                </p>
+            </div>
+        </div>
+        <div class="popUp hidden">
+            <span>Triangle created</span>
+        </div>
+        <div class="cad">
+            <div class="canvas-wrapper">
+                <canvas class="canvas" width="800" height="600"></canvas>
+            </div>
+            <div class="types-of-figures">
+                <button data-type="Line" class="btn-figures">
+                    <img class="active" data-type="Line" width="20px" height="20px" src="./icon/line.svg" alt="line">
+                </button>
+                <button data-type="Triangle" class="btn-figures">
+                    <img data-type="Triangle" width="20px" height="20px" src="./icon/triangle.svg" alt="triangle">
+                </button>
+                <button data-type="Circle" class="btn-figures">
+                    <img data-type="Circle" width="20px" height="20px" src="./icon/circle.svg" alt="triangle">
+                </button>
+            </div>
+        </div>
+        <div class="button-block">
+            <button class="collapse-btn">Collapse Line</button>
+            <button class="get-data-btn">Get figures from API</button>
+        </div>
+    </div>
+</div>
+
+<script src="./js/index.js" type="module" defer></script>
+</body>
+</html>
